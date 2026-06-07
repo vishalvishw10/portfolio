@@ -1,0 +1,9 @@
+# Local dev helper (not part of the site)
+_server.js
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.log
+node_modules/
+.vscode/
