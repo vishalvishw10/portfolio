@@ -172,6 +172,21 @@ body.light .nav.is-scrolled{background:rgba(244,242,238,.8)}
 .bbchecklist li::before{content:'▹';position:absolute;left:0;color:var(--orange)}
 .bbchecklist b{color:var(--text);font-family:var(--mono);font-size:.82rem}
 
+/* ---------- Tools ---------- */
+.tools-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.tool-card{display:block;position:relative;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:26px 26px 22px;transition:transform .3s var(--ease),border-color .3s;overflow:hidden}
+.tool-card::before{content:'';position:absolute;left:0;top:0;right:0;height:2px;background:var(--grad);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
+.tool-card:hover{transform:translateY(-5px);border-color:rgba(255,138,61,.4)}
+.tool-card:hover::before{transform:scaleX(1)}
+.tool-card__top{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.tool-card__ico{display:grid;place-items:center;width:46px;height:46px;border-radius:12px;background:rgba(255,138,61,.1);border:1px solid rgba(255,138,61,.22);color:var(--orange)}
+.tool-card__ico svg{width:24px;height:24px}
+.tool-card__open{font-family:var(--mono);font-size:.78rem;color:var(--dim);transition:color .2s}
+.tool-card:hover .tool-card__open{color:var(--orange)}
+.tool-card h3{font-family:var(--display);font-size:1.16rem;font-weight:600;margin-bottom:8px}
+.tool-card p{font-size:.92rem;color:var(--muted);line-height:1.6;margin-bottom:16px}
+.tool-card__url{font-family:var(--mono);font-size:.82rem;color:var(--orange);border:1px solid rgba(255,138,61,.25);background:rgba(255,138,61,.06);padding:5px 12px;border-radius:8px;display:inline-block}
+
 /* ---------- Contact ---------- */
 .section--contact{text-align:left}
 .contact__lede{color:var(--muted);font-size:1.08rem;max-width:620px;margin-bottom:34px;margin-top:-22px}
@@ -231,7 +246,7 @@ body.light .terminal{background:#0e1013;border-color:#20242c}
 /* ---------- Responsive ---------- */
 @media (max-width:920px){
   .grid--3{grid-template-columns:repeat(2,1fr)}
-  .about,.cred,.bb,.contact__cards{grid-template-columns:1fr}
+  .about,.cred,.bb,.contact__cards,.tools-grid{grid-template-columns:1fr}
   .stats{grid-template-columns:1fr 1fr}
 }
 @media (max-width:760px){
